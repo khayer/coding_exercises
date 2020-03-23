@@ -23,6 +23,7 @@ Skin      GTEX-N7MS-0008-SM-4E3JI
 ```
 
 ...and turn it into this
+
 ```
 Tissue   Sample
 Blood    GTEX-N7MS-0007-SM-26GME, GTEX-N7MS-0007-SM-26GMV, GTEX-N7MS-0007-SM-2D43E
@@ -58,5 +59,20 @@ Please find the tab delemited input file in the Problem_2 folder.
 
 ## Problem 4
 
+Add chr to chromosomes in the input vcf. 
 
+Turn this:
 
+```
+##FORMAT=<ID=CNQ,Number=1,Type=Float,Description="Copy number genotype quality for imprecise events">
+#CHROM  POS   ID  REF ALT   QUAL  FILTER  INFO  FORMAT  NA00001
+1 2827693   . CCGTGGATGCGGGGACCCGCATCCCCTCTCCCTTCACAGCTGAGTGACCCACATCCCCTCTCCCCTCGCA  C . PASS  SVTYPE=DEL;END=2827680;BKPTID=Pindel_LCS_D1099159;HOMLEN=1;HOMSEQ=C;SVLEN=-66 GT:GQ 1/1:13.9
+```
+
+Into this:
+
+```
+##FORMAT=<ID=CNQ,Number=1,Type=Float,Description="Copy number genotype quality for imprecise events">
+#CHROM  POS   ID  REF ALT   QUAL  FILTER  INFO  FORMAT  NA00001
+chr1 2827693   . CCGTGGATGCGGGGACCCGCATCCCCTCTCCCTTCACAGCTGAGTGACCCACATCCCCTCTCCCCTCGCA  C . PASS  SVTYPE=DEL;END=2827680;BKPTID=Pindel_LCS_D1099159;HOMLEN=1;HOMSEQ=C;SVLEN=-66 GT:GQ 1/1:13.9
+```
