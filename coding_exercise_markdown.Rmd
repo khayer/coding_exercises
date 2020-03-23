@@ -1,0 +1,78 @@
+---
+title: "Coding_exercises"
+output: html_notebook
+---
+
+Coding test as part of CHOP interview
+
+```{r setup, include = F}
+# Session options
+options(stringsAsFactors = FALSE)
+set.seed(12345)
+knitr::opts_chunk$set(echo = F)
+
+library(tidyverse)
+
+# Generate file structure in which to save R data and exports
+dir.create("Output")
+
+fname_prefix <- file.path("Output", format(Sys.Date(), "%y%m%d"))
+
+```
+
+```{r problem_1}
+problem1_data = read_csv(file.path("Problem_1", "input.csv"))
+
+longer_problem1_data = problem1_data %>% 
+  pivot_longer(cols = starts_with("Sample"), 
+               names_to = "sample", 
+               names_prefix = "Sample", 
+               values_to = "Values") %>% 
+  mutate(Condition = str_extract(sample, "X|Y"))
+
+ggplot(longer_problem1_data, aes(x = Gene, y = Values, color = Condition)) +
+  geom_boxplot(outlier.shape = NA)
+ggsave(paste0(fname_prefix, "_problem1_output.png"))
+
+```
+
+
+```{r problem_2}
+
+problem2a_data = read_delim(file.path("Problem_2", "input_2A.txt"), delim = "\t")
+
+problem2a_wider = problem2a_data %>%
+  pivot_wider()
+
+problem2b_data = read_delim(file.path("Problem_2", "input_2B.txt"), delim = "\t")
+
+problem2b_longer = problem2b_data %>%
+  separate(Sample, 
+           into = c(paste0("Sample", 1:4)), 
+           sep = ",") %>%
+  pivot_longer(starts_with("Samp"), 
+               values_to = "Sample",
+               values_drop_na = T) %>%
+  dplyr::select(Tissue, Sample)
+write_delim(problem2b_longer,
+            paste0(fname_prefix, "_problem2b_reshaped.txt"))
+
+```
+
+
+```{r problem_3}
+problem3_data = read_delim(file.path("Problem_3", "input.fastq"), 
+                           delim = "\n", 
+                           col_names = F) %>%
+  dplyr::filter(str_detect(X1, "^[AGCTN]")) 
+
+all_bases = sum(nchar(problem3_data$X1)) - sum(str_count(problem3_data$X1, "N"))
+GC_bases = sum(str_count(problem3_data$X1, "G|C"))
+pct_GC = round(GC_bases/all_bases * 100,
+               digits = 1)
+  
+```
+
+
+
+
