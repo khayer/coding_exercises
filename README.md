@@ -1,6 +1,6 @@
 # Coding exercises
 
-Please complete the following 4 exercises. You can use different programming languages for different exercises. Solve each problem within the correct sub folder. Once finished push your commits to github. 
+Please complete the following 4 exercises. You can use different programming languages for different exercises. Solve each problem within the correct sub folder. Once finished push your solution to github. 
 
 ## Problem 1
 
@@ -42,7 +42,7 @@ Blood    GTEX-N7MS-0007-SM-26GME, GTEX-N7MS-0007-SM-26GMV, GTEX-N7MS-0007-SM-2D4
 Skin     GTEX-N7MS-0007-SM-2D7W1, GTEX-N7MS-0008-SM-4E3JI
 ```
 
-Find the file
+Find the input file in the Problem_2 folder.
 
 ### 2B - deserialization
 
