@@ -1,6 +1,6 @@
 # Coding exercises
 
-Please complete the following 4 exercises. You can use different programming languages for different exercises. Solve each problem within the correct sub folder. Once finished push your solution to github. 
+Please complete the following 4 exercises. You can use different programming languages for different exercises. Solve each problem within the correct sub folder. Once finished push your solutions to github. 
 
 ## Problem 1
 
@@ -8,7 +8,7 @@ One of the PIs asks you to recreate a figure they saw in a publication:
 
 ![image not found](Problem_1/desired_output.png)
 
-The data is given to you in comma separated file:
+The data is given to you in a comma separated file:
 
 ```
 Gene,SampleX1,SampleX2,SampleX3,SampleY1,SampleY2,SampleY3
@@ -92,7 +92,7 @@ Percent GC 85.2%
 
 ## Problem 4
 
-Add chr to chromosomes in the input vcf. Bonus: use sed/awk one liners. 
+Add chr to chromosomes column in the input vcf. Bonus: use sed/awk one liners. 
 
 Turn this:
 
