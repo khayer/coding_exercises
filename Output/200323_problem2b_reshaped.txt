@@ -1,7 +1,0 @@
-Tissue Sample
-adipose_tissue_omental GSM80561
-adipose_tissue_omental GSM80562
-adipose_tissue_omental GSM80563
-adipose_tissue_omental GSM80564
-amygdala GSM80565
-amygdala GSM80566
