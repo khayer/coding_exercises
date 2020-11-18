@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Coding exercises
 
 Please complete the following 4 exercises. You can use different programming languages for different exercises. Solve each problem within the correct sub folder. Once finished push your solutions to github. 
